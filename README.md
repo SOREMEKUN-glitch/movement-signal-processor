@@ -6,8 +6,11 @@ A Python pipeline that processes raw smartphone accelerometer data collected dur
 
 Data Collection
 •	Device: Personal smartphone (Android)
+
 •	App: AndroSensor
+
 •	Duration: 33 seconds; 5 seconds stationary, 28 seconds walking
+
 •	Axes captured: X, Y, Z linear acceleration + absolute acceleration
 
 I collected this data while walking around my apartment. The spike at second 5 is the exact moment I stood up and started moving.
