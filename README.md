@@ -23,6 +23,7 @@ A 4th-order Butterworth filter (5 Hz cutoff) removes high-frequency noise while 
 3. Feature Extraction
 
 | Feature | Value | Interpretation |
+
 | Mean intensity | ~1.2 m/s² | Moderate walking effort |
 | Variability (std) | ~0.6 m/s² | Consistent gait rhythm |
 | Steps detected | 40 | Over 28 seconds of walking |
@@ -37,7 +38,7 @@ Jerk, the rate of change of acceleration, is the first derivative of the filtere
 
 Results
 
-[Movement Signal Analysis] (signal_plot.png)
+[Movement Signal Analysis] (signal_plot.png)]
 
 - Flat baseline (0–5s) confirms sensor stability before movement
 - Spike at ~5s is normal push-off biomechanics at gait initiation
