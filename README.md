@@ -37,6 +37,7 @@ Peaks identified using scipy's find_peaks with a 0.4-second minimum distance bet
 Absolute acceleration was used rather than a single axis because it captures total body movement regardless of phone orientation, making the pipeline robust across different recording setups.
 
 5. Jerk
+   
 Jerk, the rate of change of acceleration, is the first derivative of the filtered signal. Low consistent jerk means smooth controlled movement. Elevated jerk variability in older adults is associated with increased fall risk and poorer balance control.
 
 Results
