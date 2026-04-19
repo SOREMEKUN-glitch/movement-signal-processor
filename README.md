@@ -5,6 +5,7 @@ Overview
 A Python pipeline that processes raw smartphone accelerometer data collected during walking. It filters sensor noise, detects footsteps, extracts movement features, and visualizes gait patterns across three analytical panels.
 
 Data Collection
+
 •	Device: Personal smartphone (Android)
 
 •	App: AndroSensor
