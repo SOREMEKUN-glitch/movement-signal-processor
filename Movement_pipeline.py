@@ -3,27 +3,27 @@ import numpy as np
 from scipy.signal import butter, filtfilt, find_peaks
 import matplotlib.pyplot as plt
 
-# ── 1. LOAD YOUR DATA ────────────────────────────────────────────
+# 1. LOAD DATA 
 df = pd.read_csv('Raw_Data.csv')
 df.columns = ['time', 'accel_x', 'accel_y', 'accel_z', 'accel_abs']
 
 time  = df['time'].values
 accel = df['accel_abs'].values   # using absolute acceleration
 
-# ── 2. CALCULATE SAMPLING RATE ───────────────────────────────────
+# 2. CALCULATE SAMPLING RATE
 fs = 1 / np.mean(np.diff(time))
 print(f'Sampling rate: {fs:.1f} Hz')
 print(f'Recording duration: {time[-1]:.1f} seconds')
 print(f'Total samples: {len(accel)}')
 
-# ── 3. LOW-PASS FILTER (remove noise) ────────────────────────────
+# 3. LOW-PASS FILTER (remove noise) 
 def lowpass_filter(data, cutoff=5, fs=50, order=4):
     b, a = butter(order, cutoff / (fs / 2), btype='low')
     return filtfilt(b, a, data)
 
 filtered = lowpass_filter(accel, cutoff=5, fs=fs)
 
-# ── 4. EXTRACT FEATURES ──────────────────────────────────────────
+# 4. EXTRACT FEATURES 
 mean_intensity = np.mean(np.abs(filtered))
 variability    = np.std(filtered)
 jerk           = np.diff(filtered)
@@ -39,7 +39,7 @@ print(f'Variability    : {variability:.4f} m/s²')
 print(f'Steps detected : {step_count}')
 print(f'Cadence        : {cadence:.1f} steps/min')
 
-# ── 5. PLOT ──────────────────────────────────────────────────────
+# 5. PLOT 
 fig, axes = plt.subplots(3, 1, figsize=(14, 10))
 fig.suptitle('Movement Signal Analysis — Oyindamola Soremekun', 
              fontsize=14, fontweight='bold')
